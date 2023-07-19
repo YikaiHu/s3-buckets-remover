@@ -17,8 +17,7 @@ def delete_bucket_new(each_bucket, region_info):
         print(
             f"[{current_time}] - Starting removal of bucket {each_bucket} in region {region_info}")
 
-        s3_new = boto3.client('s3', region_name=region_info,
-                              endpoint_url=f'https://s3.{region_info}.amazonaws.com')
+        s3_new = boto3.client('s3', region_name=region_info)
         s3_resource_new = boto3.resource('s3', region_name=region_info)
         bucket_new = s3_resource_new.Bucket(each_bucket)
 
